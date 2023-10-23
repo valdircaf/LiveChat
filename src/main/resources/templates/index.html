@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="../static/js/sockjs.min.js"></script>
+    <script src="../static/js/stomp.min.js"></script>
+    <script src="../static/js/index.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveChat</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="login">
+        <section class="left-side">
+            <section class="texts">
+                <h1>PRIMEIRO PASSO</h1>
+                <h2>DIGITE SEU NOME</h2>
+                <h3>Para uma experiência completa,<br> 
+                    digite seu nome no campo abaixo 
+                    e <br> entre no Live Chat!</h3>
+            </section>
+            <form onsubmit="submitForm(event)" id="form-enter-chat">
+                <input type="text" placeholder="DIGITE SEU NOME" id="userName">
+                <button type="submit" onclick="openChat()" id="btn_entr_chat">
+                    <img src="../static/Img/SVG Send.png" alt="SVG Enter Chat">
+                </button>
+            </form>
+        </section>
+        <section class="right-side">
+            <img src="../static/Img/Img-logo.png" alt="Logo" class="logo">
+            <img src="../static/Img/Blur.png" alt="BG Blur" class="blur">
+        </section>
+        </section>
+
+
+    <section id="chat">
+        <section class="chat-box">
+            <form onsubmit="submitForm(event)" id="form-type-messages">
+                <input type="text" placeholder="Digite sua mensagem..." id="message">
+                <button type="submit" onclick="sendMessage()" id="btn-send">
+                    <img src="../static/Img/SVG Send.png" alt="SVG Enter Chat">
+                </button>
+            </form>
+            <div class="messages"></div>
+        </section>
+    </section>
+</body>
+</html>

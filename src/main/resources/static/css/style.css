@@ -1,0 +1,264 @@
+@keyframes btn_userName {
+    0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 26, 255, 0.384);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 26, 255, 0.089);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 26, 255, 0.014);
+	}
+}
+
+@keyframes enter-box-chat {
+    from{
+        transform: translate(-50px);
+    }
+    to{
+        transform: translate(0);
+    }
+}
+
+@keyframes showChat {
+    from{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+/*PRÉ-SETS*/
+body{
+    background-color: #030202;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*------------FIRST PAGE-------------*/
+
+.login{
+    display: flex;
+}
+
+@media screen and (max-width: 811px){
+    .login{
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.user_name{
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*------------TEXTS-------------*/
+
+.texts{
+    color: #E7EAFB;
+}
+
+.texts h1{
+    color: #244BAF;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -1.28px;
+    margin: 0;
+}
+
+.texts h2{
+    font-weight: 500;
+    margin-bottom: 5rem;
+}
+
+.texts h3{
+    font-weight: 200;
+}
+
+/*------------LEFT-SIDE-------------*/
+
+.left-side{
+    padding: 5rem;
+}
+
+/*------------INPUT-SETUSERNAME-------------*/
+
+#userName{
+    background: #244BAF;
+    border-radius: 50px;
+    width: 18rem;
+    height: 3rem;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #E7EAFB;
+}
+
+#userName:hover{
+    animation: btn_userName 1s infinite;
+}
+
+#userName::placeholder{
+    color: #E7EAFB;
+    text-align: center;
+}
+
+/*------------BTN OPEN CHAT-------------*/
+
+#btn_entr_chat{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+#btn_entr_chat img{
+    width: 20px;
+    height: 20px;
+}
+
+#form-enter-chat{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/*------------RIGHT-SIDE-------------*/
+
+.right-side .logo{
+    width: 700px;
+    position: fixed;
+    right: 5px;
+}
+
+.right-side .blur{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 650px;
+}
+
+@media screen and (max-width: 978px){
+    .right-side .logo{
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 811px){
+    .right-side .logo{
+        display: none;
+    }
+}
+
+/*------------SECOND PAGE-------------*/
+
+#chat{
+    height: 100vh;
+    background: #030202;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    display: none;
+    position: absolute;
+}
+
+.chat-box{
+    background-image: url('../Img/BG\ Chat.png');
+    background-position: center;
+    border-radius: 10px;
+    width: 60%;
+    height: 80%;
+    box-shadow: 0px 0px 50px 10px rgba(36, 75, 175, 0.13);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: .5rem 0 0 .5rem;
+    overflow: hidden;
+    animation: showChat 1s;
+}
+
+#form-type-messages{
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+#form-type-messages input{
+    width: 90%;
+    height: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background: #D9D9D9;
+    outline: none;
+    padding-left: 1rem;
+}
+
+#form-type-messages input::placeholder{
+    color: #706E6E;
+    font-size: .8rem;
+    font-weight: 400;
+}
+
+#btn-send{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+#btn-send img{
+    width: 15px;
+    height: 15px;
+}
+
+.messages{
+    color: #030202;
+    font-weight: 500;
+    font-size: 14px;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    border-radius: 10px;
+    margin-bottom: .5rem;
+    padding: .2rem;
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0);
+
+}
+
+#div-message-typped{
+    background-color: #ffffffbb;
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.13);
+    border-radius: 10px;
+    min-width: 8rem;
+    display: block;
+    padding: .5rem;
+    animation: enter-box-chat .5s;
+}
