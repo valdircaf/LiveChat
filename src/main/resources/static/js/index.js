@@ -1,6 +1,6 @@
 const chat = document.getElementById("chat");
 const div_messages = document.querySelector(".messages");
-const socket = new WebSocket("ws://localhost:8080/connect");
+const socket = new WebSocket("ws://livechat-hkgu.onrender.com/connect");
 const client = Stomp.over(socket);
 
 function submitForm(e){
