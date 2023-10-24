@@ -162,7 +162,7 @@ body{
 
 @media screen and (max-width: 978px){
     .right-side .logo{
-        width: 500px;
+        display: none;
     }
 
     .right-side .blur{
