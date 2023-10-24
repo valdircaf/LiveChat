@@ -1,3 +1,4 @@
+/*------------ANIMATIONS-------------*/
 @keyframes btn_userName {
     0% {
 		transform: scale(0.95);
@@ -52,9 +53,16 @@ body{
 }
 
 @media screen and (max-width: 811px){
+
     .login{
-        align-items: center;
-        justify-content: center;
+        position: absolute;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .left-side{
+        padding: 0;
+        width: 100%;
     }
 }
 
@@ -191,6 +199,8 @@ body{
     animation: showChat 1s;
 }
 
+/*------------FORM OF TYPE MESSAGE-------------*/
+
 #form-type-messages{
     position: absolute;
     bottom: 5px;
@@ -202,6 +212,7 @@ body{
     margin-left: 1rem;
 }
 
+/*------------FORM'S INPUT-------------*/
 #form-type-messages input{
     width: 90%;
     height: 1.5rem;
@@ -218,6 +229,7 @@ body{
     font-weight: 400;
 }
 
+/*------------FORM'S BUTTON-------------*/
 #btn-send{
     border-radius: 50%;
     width: 30px;
@@ -233,6 +245,7 @@ body{
     height: 15px;
 }
 
+/*------------DIV WHO'LL GET THE MESSAGES-------------*/
 .messages{
     color: #030202;
     font-weight: 500;
@@ -253,6 +266,7 @@ body{
 
 }
 
+/*------------P WITH THE MESSAGE TYPPED-------------*/
 #div-message-typped{
     background-color: #ffffffbb;
     box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.13);

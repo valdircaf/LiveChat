@@ -1,7 +1,8 @@
-const chat = document.getElementById("chat");
-const div_messages = document.querySelector(".messages");
+//INSTANCE OF WEBSOCKET
 const socket = new WebSocket("wss://livechat-hkgu.onrender.com/connect");
 const client = Stomp.over(socket);
+
+//PRÉ-SET TO FORMS
 
 function submitForm(e){
     e.preventDefault();
@@ -14,11 +15,13 @@ function openChat(){
     document.getElementById("chat").style.display = "flex";
 }
 
+//SET USERNAME 
 function setUserName(){
     const userName = document.getElementById("userName").value;
     localStorage.setItem("user", userName);
 }
 
+//SEND MESSAGE
 function sendMessage(){
     const message = {
         user: localStorage.getItem("user"),
@@ -29,7 +32,7 @@ function sendMessage(){
     document.getElementById("message").value = "";
 }
 
-
+//FUNCTION TO INCLUDE THE PARAGRAPH TO MESSAGES DIV
 function appendUserAndMessage(user, message){
     const p = document.createElement("p");
     p.textContent = user + ": " + message;
@@ -38,6 +41,7 @@ function appendUserAndMessage(user, message){
     p.scrollIntoView({ behavior: "smooth", block: "end" });
 }
 
+//CONNECT WITH WEBSOCKET
 function connect(){
     client.connect({}, (frame)=>{
 
