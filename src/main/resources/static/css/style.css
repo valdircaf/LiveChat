@@ -164,10 +164,8 @@ body{
     .right-side .logo{
         width: 500px;
     }
-}
 
-@media screen and (max-width: 811px){
-    .right-side .logo{
+    .right-side .blur{
         display: none;
     }
 }
@@ -221,6 +219,12 @@ body{
     background: #D9D9D9;
     outline: none;
     padding-left: 1rem;
+}
+
+@media screen and (max-width: 700px){
+    #form-type-messages input{
+        width: 70%;
+    }
 }
 
 #form-type-messages input::placeholder{
