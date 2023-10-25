@@ -1,6 +1,6 @@
 //INSTANCE OF WEBSOCKET
-// const socket = new WebSocket("wss://livechat-hkgu.onrender.com/connect");
-const socket = new WebSocket("ws://localhost:8080/connect");
+const socket = new WebSocket("wss://livechat-hkgu.onrender.com/connect");
+// const socket = new WebSocket("ws://localhost:8080/connect"); //Test
 const client = Stomp.over(socket);
 
 //PRÉ-SET TO FORMS
