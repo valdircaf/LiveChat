@@ -1,19 +1,22 @@
 /*------------ANIMATIONS-------------*/
+@keyframes rotateH1{
+    0%{
+        transform:rotate(0);
+        transform-origin:bottom
+    }
+    100%{
+        transform:rotate(360deg);
+        transform-origin:bottom
+    }
+}
+
 @keyframes btn_userName {
-    0% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(0, 26, 255, 0.384);
-	}
-
-	70% {
-		transform: scale(1);
-		box-shadow: 0 0 0 10px rgba(0, 26, 255, 0.089);
-	}
-
-	100% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(0, 26, 255, 0.014);
-	}
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 @keyframes enter-box-chat {
@@ -48,153 +51,115 @@ body{
 
 /*------------FIRST PAGE-------------*/
 
-.login{
+.first-page{
     display: flex;
+    background: linear-gradient(108deg, #244BAF 21.14%, #4E54D1 93.72%);
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-@media screen and (max-width: 811px){
-
-    .login{
-        position: absolute;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .left-side{
-        padding: 0;
-        width: 100%;
-    }
+.first-page h1{
+    font-size: 70px;
+    font-family: Oleo Script;
+    color: #FFF;
+    animation: rotateH1 1s;
 }
 
-.user_name{
-    font-size: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-/*------------TEXTS-------------*/
-
-.texts{
-    color: #E7EAFB;
-}
-
-.texts h1{
-    color: #244BAF;
-    font-size: 40px;
+.first-page h2{
+    color: rgba(255, 255, 255, 0.51);
+    font-style: italic;
     font-weight: 700;
-    letter-spacing: -1.28px;
-    margin: 0;
-}
-
-.texts h2{
-    font-weight: 500;
-    margin-bottom: 5rem;
-}
-
-.texts h3{
-    font-weight: 200;
-}
-
-/*------------LEFT-SIDE-------------*/
-
-.left-side{
-    padding: 5rem;
+    font-family: Open Sans;
+    font-size: 20px;
+    position: fixed;
+    bottom: .5rem;
 }
 
 /*------------INPUT-SETUSERNAME-------------*/
 
+/*------------FIRST-PAGE INPUTS-------------*/
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputs #openChat{
+    border: 2px solid #68D5F8;
+    width: 18rem;
+    height: 3rem;
+    border-radius: 50px;
+    text-align: center;
+    background-color: transparent;
+    color: #68D5F8;
+    cursor: pointer;
+    font-family: Open Sans;
+    font-weight: 700;
+    font-size: .87rem;   
+    transition: .5s;
+}
+
+.inputs #openChat:hover{
+    border: 2px solid #00e1ff;
+    transform: scale(1.05);
+    transition: .3s;
+}
+
 #userName{
-    background: #244BAF;
+    background: #FFF;
     border-radius: 50px;
     width: 18rem;
     height: 3rem;
     border: none;
     outline: none;
     text-align: center;
-    color: #E7EAFB;
-}
-
-#userName:hover{
-    animation: btn_userName 1s infinite;
-}
-
-#userName::placeholder{
-    color: #E7EAFB;
-    text-align: center;
-}
-
-/*------------BTN OPEN CHAT-------------*/
-
-#btn_entr_chat{
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    outline: none;
-    border: none;
-    text-align: center;
-    cursor: pointer;
-}
-
-#btn_entr_chat img{
-    width: 20px;
-    height: 20px;
-}
-
-#form-enter-chat{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-/*------------RIGHT-SIDE-------------*/
-
-.right-side .logo{
-    width: 700px;
-    position: fixed;
-    right: 5px;
-}
-
-.right-side .blur{
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 650px;
-}
-
-@media screen and (max-width: 978px){
-    .right-side .logo{
-        display: none;
-    }
-
-    .right-side .blur{
-        display: none;
-    }
+    color: rgba(40, 40, 40, 0.51);
+    font-weight: 800;
+    animation: btn_userName 4s;
 }
 
 /*------------SECOND PAGE-------------*/
 
 #chat{
     height: 100vh;
-    background: #030202;
+    background: linear-gradient(122deg, #244BAF 0%, #4E54D1 69.38%);
     align-items: center;
     justify-content: center;
     width: 100%;
     display: none;
     position: absolute;
+    overflow: hidden;
 }
 
 .chat-box{
-    background-image: url('../Img/BG\ Chat.png');
     background-position: center;
     border-radius: 10px;
     width: 60%;
     height: 80%;
-    box-shadow: 0px 0px 50px 10px rgba(36, 75, 175, 0.13);
+    box-shadow: 0px 0px 50px 10px rgba(2, 73, 252, 0.567);
     display: flex;
     justify-content: center;
     position: relative;
     padding: .5rem 0 0 .5rem;
-    overflow: hidden;
     animation: showChat 1s;
+    background: rgba(104, 213, 248, 0.73);
+    border: 2px solid #000;
+}
+
+@media screen and (max-width: 500px){
+    .chat-box{
+        width: 90%;
+        height: 80%;
+    }
+
+    #form-type-messages{
+        
+        margin-bottom: 1rem;
+    }
 }
 
 /*------------FORM OF TYPE MESSAGE-------------*/
@@ -210,7 +175,8 @@ body{
     margin-left: 1rem;
 }
 
-/*------------FORM'S INPUT-------------*/
+/*------------FORM'S TYPE MESSAGE INPUT-------------*/
+
 #form-type-messages input{
     width: 90%;
     height: 1.5rem;
@@ -234,6 +200,7 @@ body{
 }
 
 /*------------FORM'S BUTTON-------------*/
+
 #btn-send{
     border-radius: 50%;
     width: 30px;
@@ -250,6 +217,7 @@ body{
 }
 
 /*------------DIV WHO'LL GET THE MESSAGES-------------*/
+
 .messages{
     color: #030202;
     font-weight: 500;
@@ -271,6 +239,7 @@ body{
 }
 
 /*------------P WITH THE MESSAGE TYPPED-------------*/
+
 #div-message-typped{
     background-color: #ffffffbb;
     box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.13);
@@ -279,4 +248,5 @@ body{
     display: block;
     padding: .5rem;
     animation: enter-box-chat .5s;
+    max-width: 90%;
 }

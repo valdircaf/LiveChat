@@ -10,30 +10,24 @@
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="login">
-        <section class="left-side">
-            <section class="texts">
-                <h1>PRIMEIRO PASSO</h1>
-                <h2>DIGITE SEU NOME</h2>
-                <h3>Para uma experiência completa,<br> 
-                    digite seu nome no campo abaixo 
-                    e <br> entre no Live Chat!</h3>
+    <section class="first-page">
+            <h1>livechat</h1>
+            <section class="inputs">
+                <form onsubmit="submitForm(event)" id="form-enter-chat">
+                    <input type="text" placeholder="Digite seu nome..." id="userName">
+                    <!-- <button type="submit" onclick="openChat()" id="btn_entr_chat">
+                        <img src="./Img/SVG Send.png" alt="SVG Enter Chat">
+                    </button> -->
+                </form>
+                <button type="submit" id="openChat" onclick="submitForm(event)">ENTRAR</button>
             </section>
-            <form onsubmit="submitForm(event)" id="form-enter-chat">
-                <input type="text" placeholder="DIGITE SEU NOME" id="userName">
-                <button type="submit" onclick="openChat()" id="btn_entr_chat">
-                    <img src="../static/Img/SVG Send.png" alt="SVG Enter Chat">
-                </button>
-            </form>
+            <div class="error"></div>
+            <h2>Desenvolvido por Valdir Castro</h2>
         </section>
-        <section class="right-side">
-            <img src="../static/Img/Img-logo.png" alt="Logo" class="logo">
-            <img src="../static/Img/Blur.png" alt="BG Blur" class="blur">
-        </section>
-        </section>
-
 
     <section id="chat">
         <section class="chat-box">

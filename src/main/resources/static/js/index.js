@@ -1,16 +1,30 @@
 //INSTANCE OF WEBSOCKET
-const socket = new WebSocket("wss://livechat-hkgu.onrender.com/connect");
+// const socket = new WebSocket("wss://livechat-hkgu.onrender.com/connect");
+const socket = new WebSocket("ws://localhost:8080/connect");
 const client = Stomp.over(socket);
 
 //PRÉ-SET TO FORMS
 
 function submitForm(e){
     e.preventDefault();
+    if(document.getElementById("userName").value != ""){
+        openChat();
+    }
+    else{
+        throwNewError("Digite um usuário, por favor", document.querySelector(".error"))
+    }
+}
+
+function throwNewError(err, element){
+    const p = document.createElement("p");
+    p.textContent = err;
+    element.appendChild(p);
+    p.style.color = "#FFF"
 }
 
 function openChat(){
     setUserName();
-    const div_login = document.querySelector(".login");
+    const div_login = document.querySelector(".first-page");
     div_login.style.display = "none";
     document.getElementById("chat").style.display = "flex";
 }
@@ -23,13 +37,16 @@ function setUserName(){
 
 //SEND MESSAGE
 function sendMessage(){
-    const message = {
-        user: localStorage.getItem("user"),
-        message: document.getElementById("message").value
+    if(document.getElementById("message").value != ""){
+        const message = {
+            user: localStorage.getItem("user"),
+            message: document.getElementById("message").value
+        }
+        client.send("/app/chatmessages", {}, JSON.stringify(message));
+        document.getElementById("message").value = "";
+    }else{
+        return;
     }
-
-    client.send("/app/chatmessages", {}, JSON.stringify(message));
-    document.getElementById("message").value = "";
 }
 
 //FUNCTION TO INCLUDE THE PARAGRAPH TO MESSAGES DIV
