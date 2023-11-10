@@ -1,10 +1,12 @@
 # 📭 Live Chat
 
-<img src="./src/main/resources/static/Img/Site.png"/>
+https://github.com/valdircaf/LiveChat/assets/70548483/1fc2dc4d-7dc4-46db-b51f-d85251827450
 
 # ⁉️ Sobre o projeto
 
 Live Chat é um aplicativo desenvolvido para conversas simultâneas. Era um projeto que eu queria fazer há algum tempo, mas nunca parei para desenvolver 😂. Utilizei o Web Socket para desenvolver a característica simultânea.
+
+<img src="./src/main/resources/static/Img/Site.png"/>
 
 # 🛠️ Tecnologias 
 - Java 17
